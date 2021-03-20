@@ -5,7 +5,6 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { sidebarData } from "./sidebarData";
 import Submenu from "./Submenu";
-import { IconContext } from "react-icons/lib";
 
 const Nav = styled.div`
   background: #15171c;
@@ -22,6 +21,7 @@ const NavIcon = styled(Link)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-decoration: none;
 `;
 
 const SidebarNav = styled.nav`
@@ -42,6 +42,11 @@ const SidebarWrap = styled.div`
   width: 200%;
 `;
 
+const MenuText = styled.text`
+  color: #fff;
+  font-size: large;
+`;
+
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
 
@@ -51,23 +56,20 @@ const Sidebar = () => {
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
-        <Nav>
-          <NavIcon to="#">
-            <FaIcons.FaBars onClick={showSidebar} />
-          </NavIcon>
-        </Nav>
-        <SidebarNav sidebar={sidebar}>
-          <SidebarWrap>
-            <NavIcon to="#">
-              <AiIcons.AiOutlineClose onClick={showSidebar} />
-            </NavIcon>
-            {sidebarData.map((item, index) => {
-              return <Submenu item={item} key={index} />;
-            })}
-          </SidebarWrap>
-        </SidebarNav>
-      </IconContext.Provider>
+      <Nav>
+        <NavIcon to="#">
+          <MenuText onClick={showSidebar}>
+            {sidebar ? "Hide Menu" : "Show Menu"}
+          </MenuText>
+        </NavIcon>
+      </Nav>
+      <SidebarNav sidebar={sidebar}>
+        <SidebarWrap>
+          {sidebarData.map((item, index) => {
+            return <Submenu item={item} key={index} />;
+          })}
+        </SidebarWrap>
+      </SidebarNav>
     </>
   );
 };
