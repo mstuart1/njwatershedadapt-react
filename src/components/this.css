@@ -1,6 +1,9 @@
 .test {
     color: #fff;
     text-decoration: none;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 
 }
 

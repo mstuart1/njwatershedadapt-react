@@ -36,14 +36,13 @@ const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>
         </div>
-        <div className="dropdown">
-          {/* This is where the dropdown kicks in, if has subnav and if subnav is clicked (state) then show the open icon or ELSE if item has subnav show closed icon ELSE show nothing*/}
-          {item.subNav && subnav
-            ? item.iconOpened
-            : item.subNav
-            ? item.iconClosed
-            : null}
-        </div>
+
+        {/* This is where the dropdown kicks in, if has subnav and if subnav is clicked (state) then show the open icon or ELSE if item has subnav show closed icon ELSE show nothing*/}
+        {item.subNav && subnav
+          ? item.iconOpened
+          : item.subNav
+          ? item.iconClosed
+          : null}
       </SidebarLink>
       {/* map through to add submenu items if subnav is true, map through the subNav of the item */}
       {subnav &&

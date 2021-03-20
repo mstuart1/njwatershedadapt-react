@@ -11,7 +11,7 @@ const Nav = styled.div`
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: 2rem;
+  margin-left: 1rem;
   font-size: 2rem;
   height: 50px;
   display: flex;
@@ -28,8 +28,7 @@ const NavCmpnt = ({ sidebar, showSidebar }) => {
     <Nav>
       <NavIcon to="#">
         <MenuText onClick={showSidebar}>
-          {sidebar ? "Hide Menu" : "Show Menu"} The state is{" "}
-          {sidebar ? "TRUE" : "FALSE"}
+          {sidebar ? "Hide Menu" : "Show Menu"}
         </MenuText>
       </NavIcon>
     </Nav>
