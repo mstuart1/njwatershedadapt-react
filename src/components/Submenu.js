@@ -40,14 +40,14 @@ const SidebarLabel = styled.span`
 //     cursor: pointer;
 //   }
 // `;
-const Submenu = ({ item }) => {
+const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
   const [subnav, setSubnav] = useState(false);
   const showSubNav = () => setSubnav(!subnav);
 
   return (
     <>
       <SidebarLink to={item.path} onClick={item.subNav && showSubNav}>
-        <div>
+        <div style={{ paddingLeft: depth * depthStep }}>
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>
         </div>
@@ -63,7 +63,14 @@ const Submenu = ({ item }) => {
       {/* map through to add submenu items if subnav is true, map through the subNav of the item */}
       {subnav &&
         item.subNav.map((item, index) => {
-          return <Submenu item={item} key={index} />;
+          return (
+            <Submenu
+              item={item}
+              depthStep={depthStep}
+              depth={depth + 2}
+              key={index}
+            />
+          );
         })}
     </>
   );
