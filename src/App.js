@@ -8,25 +8,32 @@ import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
 import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 import Intro from "./components/Intro";
+import styled from "styled-components";
 
-function App() {
+const Container = styled.div`
+  // display: flex;
+`;
+
+const App = () => {
   return (
     <>
       <Router>
-        <RutgersHeader />
-        <UnitHeader />
-        <Sidebar />
-        <Switch>
-          <Route path="/overview" exact component={Overview} />
-          <Route path="/reports" exact component={Reports} />
-          <Route path="/reports/reports1" exact component={ReportsOne} />
-          <Route path="/reports/reports2" exact component={ReportsTwo} />
-        </Switch>
-        <Intro />
-        <RutgersFooter />
+        <Container>
+          <RutgersHeader />
+          <UnitHeader />
+          <Sidebar />
+          <Switch>
+            <Route path="/overview" exact component={Overview} />
+            <Route path="/reports" exact component={Reports} />
+            <Route path="/reports/reports1" exact component={ReportsOne} />
+            <Route path="/reports/reports2" exact component={ReportsTwo} />
+          </Switch>
+          <Intro />
+          <RutgersFooter />
+        </Container>
       </Router>
     </>
   );
-}
+};
 
 export default App;

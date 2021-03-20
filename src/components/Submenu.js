@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // the &:hover allows you to do the active etc with styled components
 const SidebarLink = styled(Link)`
   display: flex;
-  color: #e1e9fc;
+  color: #white !important;
   justify-content: space-between;
   align-items: center;
   // padding: 20px;
@@ -23,6 +23,7 @@ const SidebarLink = styled(Link)`
 
 const SidebarLabel = styled.span`
   margin-left: 16px;
+  color: white !important;
 `;
 
 const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
@@ -34,7 +35,9 @@ const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
       <SidebarLink to={item.path} onClick={item.subNav && showSubNav}>
         <div style={{ paddingLeft: depth * depthStep }}>
           {item.icon}
-          <SidebarLabel>{item.title}</SidebarLabel>
+          <SidebarLabel style={{ color: "white !important" }}>
+            {item.title}
+          </SidebarLabel>
         </div>
 
         {/* This is where the dropdown kicks in, if has subnav and if subnav is clicked (state) then show the open icon or ELSE if item has subnav show closed icon ELSE show nothing*/}
