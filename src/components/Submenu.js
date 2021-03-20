@@ -25,21 +25,6 @@ const SidebarLabel = styled.span`
   margin-left: 16px;
 `;
 
-// const DropdownLink = styled(Link)`
-//   background: #414757;
-//   height: 60px;
-//   padding-left: 3rem;
-//   display: flex;
-//   align-items: center;
-//   text-decoration: none;
-//   color: #f5f5f5;
-//   font-size: 18px;
-
-//   &:hover {
-//     background: #632ce4;
-//     cursor: pointer;
-//   }
-// `;
 const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
   const [subnav, setSubnav] = useState(false);
   const showSubNav = () => setSubnav(!subnav);
@@ -51,7 +36,7 @@ const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>
         </div>
-        <div>
+        <div className="dropdown">
           {/* This is where the dropdown kicks in, if has subnav and if subnav is clicked (state) then show the open icon or ELSE if item has subnav show closed icon ELSE show nothing*/}
           {item.subNav && subnav
             ? item.iconOpened
