@@ -15,7 +15,7 @@ const IntroDiv = styled.div`
   line-height: 1.25;
   width: auto;
   height: 30vh;
-  display: flex;
+  flex: 2;
   align-items: center;
   justify-content: center;
 `;
@@ -27,9 +27,17 @@ const Overview = styled.div`
   background: #efefef;
 `;
 
+const Container = styled.div`
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  margin-right: 10px;
+  float: right;
+`;
+
 const Intro = () => {
   return (
-    <>
+    <Container>
       <Background>
         <IntroDiv>
           <h1>NJ Watershed Adapt</h1>
@@ -54,7 +62,7 @@ const Intro = () => {
           strategies on water resources.
         </p>
       </Overview>
-    </>
+    </Container>
   );
 };
 

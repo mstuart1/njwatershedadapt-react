@@ -10,29 +10,56 @@ import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 import Intro from "./components/Intro";
 import styled from "styled-components";
 
-const Container = styled.div`
-  // display: flex;
+const Container = styled.div``;
+
+const Page = styled.div``;
+
+const HeaderContainer = styled.div`
+  z-index: 100;
+`;
+
+const SidebarCntnr = styled.div`
+  z-index: 10;
+`;
+
+const Content = styled.div`
+  padding: 20px;
+`;
+
+const Image = styled.img`
+  float: left;
+  width: 300px;
+  height: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 `;
 
 const App = () => {
   return (
-    <>
-      <Router>
-        <Container>
-          <RutgersHeader />
-          <UnitHeader />
-          <Sidebar />
-          <Switch>
-            <Route path="/overview" exact component={Overview} />
-            <Route path="/reports" exact component={Reports} />
-            <Route path="/reports/reports1" exact component={ReportsOne} />
-            <Route path="/reports/reports2" exact component={ReportsTwo} />
-          </Switch>
-          <Intro />
-          <RutgersFooter />
-        </Container>
-      </Router>
-    </>
+    <Container>
+      <Page>
+        <Router>
+          <HeaderContainer>
+            <RutgersHeader />
+            <UnitHeader />
+          </HeaderContainer>
+          <SidebarCntnr>
+            <Sidebar />
+            <Switch>
+              <Route path="/overview" exact component={Overview} />
+              <Route path="/reports" exact component={Reports} />
+              <Route path="/reports/reports1" exact component={ReportsOne} />
+              <Route path="/reports/reports2" exact component={ReportsTwo} />
+            </Switch>
+          </SidebarCntnr>
+          {/* <Content> */}
+          {/* <Image></Image> */}
+          {/* <Intro /> */}
+          {/* </Content> */}
+          {/* <RutgersFooter /> */}
+        </Router>
+      </Page>
+    </Container>
   );
 };
 
