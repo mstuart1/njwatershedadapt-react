@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import GlobalFonts from "./fonts/fonts";
 
-const MenuContainer = styled.div`
+const HeaderContainer = styled.div`
   color: #000;
   background-color: #fff;
-  padding: 20px 0;
+  padding: 10px 10px;
   display: flex;
   justify-content: flext start;
 `;
@@ -18,14 +19,15 @@ const SebsText = styled.h1`
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.25;
-  margin: 0 10px;
+  // margin: 0 10px;
 `;
 
 const UnitHeader = () => {
   return (
-    <MenuContainer>
+    <HeaderContainer>
+      <GlobalFonts />
       <SebsText>School of Environmental and Biological Sciences</SebsText>
-    </MenuContainer>
+    </HeaderContainer>
   );
 };
 

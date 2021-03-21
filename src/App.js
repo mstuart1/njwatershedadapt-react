@@ -32,6 +32,11 @@ const Page = styled.div`
   justify-content: space-between;
 `;
 
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const ContentTest = styled.div`
   border: 1px solid black;
   background-color: blue;
@@ -42,8 +47,10 @@ const ContentTest = styled.div`
 const App = () => {
   return (
     <Router>
-      <RutgersHeader />
-      <UnitHeader />
+      <HeaderContainer>
+        <RutgersHeader />
+        <UnitHeader />
+      </HeaderContainer>
       <Page>
         <Sidebar />
         <ContentTest></ContentTest>

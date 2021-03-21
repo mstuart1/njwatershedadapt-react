@@ -1,53 +1,67 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import logo from "./rutgers-logo.png";
+import logo from "./RUTGERS_REVWHITE.png";
 
-const MenuContainer = styled.div`
-  color: #fff;
-  background-color: #c03;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-`;
-
-const Menu = styled.div`
-  margin: 0 10px;
-  width: 2000px;
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
+
+  width: 100%;
+  padding: 10px;
+  background: #c03;
 `;
 
-const Links = styled.div`
-  display: flex;
-  width: 400px;
-  justify-content: space-between;
+const Menu = styled.ul`
+  margin-top: 10px;
+
+  & > li {
+    display: inline;
+    margin-right: 50px;
+  }
+
+  & > li:last-of-type {
+    margin-right: 0;
+  }
 `;
 
-const LinkItem = styled(Link)`
-  color: white !important;
+const Logo = styled.div`
+  & img {
+    width: 150px;
+  }
 `;
 
 const RutgersHeader = () => {
   return (
-    <MenuContainer>
+    <Header>
+      <Logo>
+        <a href="https://www.rutgers.edu">
+          <img src={logo} alt="Rutgers Logo" style={{ maxWidth: "464px" }} />
+        </a>
+      </Logo>
       <Menu>
-        <div className="logo">
-          <a href="https://www.rutgers.edu">
-            <img src={logo} alt="Rutgers Logo" />
-          </a>
-        </div>
-        <Links>
-          <LinkItem to="https://newbrunswick.rutgers.edu/">
+        <li>
+          <a
+            style={{ color: "white" }}
+            href="https://newbrunswick.rutgers.edu/"
+          >
             Rutgers–New Brunswick
-          </LinkItem>
-          <LinkItem to="https://my.rutgers.edu">myRutgers</LinkItem>
-          <LinkItem to="https://search.rutgers.edu/web.html">
+          </a>
+        </li>
+        <li>
+          <a style={{ color: "white" }} href="https://my.rutgers.edu">
+            myRutgers
+          </a>
+        </li>
+        <li>
+          <a
+            style={{ color: "white" }}
+            href="https://search.rutgers.edu/web.html"
+          >
             Search Rutgers
-          </LinkItem>
-        </Links>
+          </a>
+        </li>
       </Menu>
-    </MenuContainer>
+    </Header>
   );
 };
 
