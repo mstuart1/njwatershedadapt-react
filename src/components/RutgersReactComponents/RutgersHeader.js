@@ -30,26 +30,24 @@ const LinkItem = styled(Link)`
 
 const RutgersHeader = () => {
   return (
-    <>
-      <MenuContainer>
-        <Menu>
-          <div className="logo">
-            <a href="https://www.rutgers.edu">
-              <img src={logo} alt="Rutgers Logo" />
-            </a>
-          </div>
-          <Links>
-            <LinkItem to="https://newbrunswick.rutgers.edu/">
-              Rutgers–New Brunswick
-            </LinkItem>
-            <LinkItem to="https://my.rutgers.edu">myRutgers</LinkItem>
-            <LinkItem to="https://search.rutgers.edu/web.html">
-              Search Rutgers
-            </LinkItem>
-          </Links>
-        </Menu>
-      </MenuContainer>
-    </>
+    <MenuContainer>
+      <Menu>
+        <div className="logo">
+          <a href="https://www.rutgers.edu">
+            <img src={logo} alt="Rutgers Logo" />
+          </a>
+        </div>
+        <Links>
+          <LinkItem to="https://newbrunswick.rutgers.edu/">
+            Rutgers–New Brunswick
+          </LinkItem>
+          <LinkItem to="https://my.rutgers.edu">myRutgers</LinkItem>
+          <LinkItem to="https://search.rutgers.edu/web.html">
+            Search Rutgers
+          </LinkItem>
+        </Links>
+      </Menu>
+    </MenuContainer>
   );
 };
 

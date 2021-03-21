@@ -1,22 +1,15 @@
 // import logo from './logo.svg';
 // import "./App.css";
-// import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import styled from "styled-components";
 // import Overview from "./pages/Overview";
 // import { Reports, ReportsOne, ReportsTwo } from "./pages/Reports";
 import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
-// import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
+import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
 // import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 // import Intro from "./components/Intro";
 // import styled from "styled-components";
-
-// const Container = styled.div``;
-
-// const Page = styled.div``;
-
-// const HeaderContainer = styled.div`
-//   z-index: 100;
-// `;
 
 // const SidebarCntnr = styled.div`
 //   z-index: 10;
@@ -34,17 +27,29 @@ import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 //   margin-bottom: 20px;
 // `;
 
+const Page = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ContentTest = styled.div`
+  border: 1px solid black;
+  background-color: blue;
+  height: 200px;
+  flex: 1;
+`;
+
 const App = () => {
   return (
-    // <Container>
-    //   <Page>
     <Router>
-      {/* <HeaderContainer> */}
       <RutgersHeader />
-      {/* //   <UnitHeader /> */}
-      {/* // </HeaderContainer> */}
+      <UnitHeader />
+      <Page>
+        <Sidebar />
+        <ContentTest></ContentTest>
+      </Page>
       {/* // <SidebarCntnr> */}
-      {/* //   <Sidebar /> */}
+
       {/* //   <Switch> */}
       {/* //     <Route path="/overview" exact component={Overview} /> */}
       {/* //     <Route path="/reports" exact component={Reports} /> */}

@@ -6,16 +6,12 @@ import Submenu from "./Submenu";
 // import NavCmpnt from "./NavCmpnt";
 
 const SidebarNav = styled.nav`
-  margin-right: 1px;
-  justify-content: center;
-  color: white;
-  background: #000000d5;
-  width: 430px;
-  height: 90vh;
-  overflow-y: scroll;
-  left: 0;
-  margin-right: 10px;
-  float: left;
+  border: 1px solid black;
+  background-color: #000000d5;
+  height: 430px;
+  flex: initial;
+  width: 300px;
+  flex-wrap: wrap;
 `;
 
 const SidebarWrap = styled.div`
