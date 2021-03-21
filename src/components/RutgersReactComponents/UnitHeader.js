@@ -16,10 +16,9 @@ const HeaderContainer = styled.div`
 const SebsText = styled.h1`
   font-family: "Libre Baskerville", serif;
   color: #000;
-  font-size: 1.25rem;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.25;
-  // margin: 0 10px;
 `;
 
 const UnitHeader = () => {

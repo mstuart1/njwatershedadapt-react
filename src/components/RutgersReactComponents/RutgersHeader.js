@@ -7,16 +7,15 @@ const Header = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  padding: 10px;
+  padding: 5px 5px 0px 5px;
   background: #c03;
 `;
 
 const Menu = styled.ul`
-  margin-top: 10px;
-
   & > li {
     display: inline;
-    margin-right: 50px;
+    margin-right: 10px;
+    font-size: 12px;
   }
 
   & > li:last-of-type {
@@ -26,7 +25,7 @@ const Menu = styled.ul`
 
 const Logo = styled.div`
   & img {
-    width: 150px;
+    width: 100px;
   }
 `;
 
