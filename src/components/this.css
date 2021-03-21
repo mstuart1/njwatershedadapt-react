@@ -5,6 +5,8 @@
     flex-direction:row;
     z-index: auto;
 
+    border: 2px solid white;
+
 }
 
 .test:hover{
