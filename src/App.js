@@ -7,7 +7,7 @@ import styled from "styled-components";
 // import { Reports, ReportsOne, ReportsTwo } from "./pages/Reports";
 import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
-// import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
+import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 // import Intro from "./components/Intro";
 // import styled from "styled-components";
 
@@ -49,7 +49,6 @@ const App = () => {
         <ContentTest></ContentTest>
       </Page>
       {/* // <SidebarCntnr> */}
-
       {/* //   <Switch> */}
       {/* //     <Route path="/overview" exact component={Overview} /> */}
       {/* //     <Route path="/reports" exact component={Reports} /> */}
@@ -61,7 +60,7 @@ const App = () => {
       {/* // <Image></Image> */}
       {/* // <Intro /> */}
       {/* // </Content> */}
-      {/* // <RutgersFooter /> */}
+      <RutgersFooter />
     </Router>
     // </Page>
     // </Container>

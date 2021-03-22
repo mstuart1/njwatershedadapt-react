@@ -1,81 +1,200 @@
 import React from "react";
-import Config from "./crssaConfig";
+import { contactInfo } from "./contactInfo";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import * as MdIcons from "react-icons/md";
+import styled from "styled-components";
 
-// for Css used
-/* <link rel="stylesheet" href="https://sebs.rutgers.edu/2019/css/foundation.min.css" />
-    <link rel="stylesheet" href="https://sebs.rutgers.edu/2019/css/sebs.min.css" />
-    <link rel="stylesheet" href="https://sebs.rutgers.edu/2019/css/sebs-unit.min.css" /> 
-    <script src="https://kit.fontawesome.com/47417a6db9.js" crossorigin="anonymous"></script>
-    */
+// .footer-container {
+const FooterCntnr = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 1.2em;
+
+  a:link,
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  h3 {
+    padding: 0 10px;
+    color: #fecd31;
+  }
+`;
+
+const FooterOne = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background-color: #666666;
+`;
+
+const FooterTwo = styled.div`
+  display: flex;
+  background-color: black;
+  color: white;
+  text-align: center;
+
+  .footer-container {
+    display: flex;
+    justify-content: center;
+
+    .copywrite {
+      max-width: 500px;
+
+      .michelle {
+        font-size: 0.7em;
+      }
+    }
+  }
+`;
+
+const FooterItem = styled.div`
+  flex: 1;
+`;
+
+const Contact = styled.div`
+  padding: 0 10px;
+  color: white;
+`;
+
+const Webmaster = styled.div`
+  padding-left: 55px;
+  padding-bottom: 10px;
+  color: white;
+
+  address {
+    justify-content: flex-start;
+    align-self: flex-start;
+    font-style: normal;
+  }
+`;
+
+const AddressIcon = styled.div`
+  color: #fecd31;
+  display: inline;
+  padding: 15px;
+`;
+
+const AddressCntnr = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const Social = styled.div`
+  padding-top: 0;
+  padding-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  li {
+    display: inline;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+`;
+
+const RelatedUnits = styled.div`
+  h3 {
+    padding-left: 40px;
+  }
+`;
+const RelatedLinks = styled.ul`
+  display: flex;
+  flex-direction: column;
+
+  li {
+    list-style: none;
+    padding-bottom: 0.5em;
+  }
+`;
 
 const Footer = () => {
   return (
-    <footer id="footer-wrapper">
-      <div id="footer1-wrapper" className="grid-container full">
-        <div id="footer1" className="grid-x grid-margin-x">
-          <div className="cell small-12 medium-6 large-5">
-            <h2>Contact</h2>
-
-            <p id="address" className="icon i-location">
-              {Config.UNIT_NAME}
-              <br />
-              {Config.SCHOOL_NAME}
-              <br />
-              {Config.RUTGERS}
-              <br />
-              {Config.STREET_ADDRESS}
-              <br />
-              {Config.CITY_STATE_ZIP}
-              <br />
-              <a href="https://maps.rutgers.edu/#/?selected=6006">
-                {Config.BUILDING_NAME}
-              </a>
-              , {Config.CAMPUS}
-              <br />
-            </p>
-
-            <ol id="phones" className="icon i-phone">
-              <li>{Config.PHONE_NUMBER}</li>
-            </ol>
-
-            <ol id="social">
+    <FooterCntnr>
+      {/* <div className="footer-container"></div> */}
+      <FooterOne>
+        <FooterItem>
+          <Contact>
+            <h3>Contact</h3>
+            <AddressCntnr>
+              <AddressIcon>
+                <MdIcons.MdLocationOn />
+              </AddressIcon>
+              <p>
+                {contactInfo.unitName}
+                <br />
+                {contactInfo.schoolName}
+                <br />
+                {contactInfo.rutgers}
+                <br />
+                {contactInfo.street}
+                <br />
+                {contactInfo.cityStateZip}
+                <br />
+                <a
+                  href={`https://maps.rutgers.edu/#/?selected=${contactInfo.buildingNumber}`}
+                >
+                  {contactInfo.buildingName}
+                </a>
+                , {contactInfo.campus}
+                <br />
+              </p>
+            </AddressCntnr>
+            <AddressCntnr>
+              <AddressIcon>
+                <AiIcons.AiFillPhone />
+              </AddressIcon>
+              <p>{contactInfo.phone}</p>
+            </AddressCntnr>
+          </Contact>
+          {/* <Social>
+            <ul>
               <li>
                 <a href="https://www.facebook.com/RutgersSEBS">
-                  <i className="fab fa-facebook-square">
-                    <span className="vh">Facebook</span>
-                  </i>
+                  <FaIcons.FaFacebookSquare />
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/RutgersSEBS">
-                  <i className="fab fa-instagram">
-                    <span className="vh">Instagram</span>
-                  </i>
+                  <FaIcons.FaInstagram />
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/RutgersSEBS">
-                  <i className="fab fa-twitter">
-                    <span className="vh">Twitter</span>
-                  </i>
+                  <FaIcons.FaTwitter />
                 </a>
               </li>
               <li>
                 <a href="https://www.youtube.com/user/RutgersSEBS">
-                  <i className="fab fa-youtube-square">
-                    <span className="vh">YouTube</span>
-                  </i>
+                  <FaIcons.FaYoutubeSquare />
                 </a>
               </li>
-            </ol>
+            </ul>
+          </Social> */}
+          <Webmaster>
+            <address>
+              Webmaster:{" "}
+              <a href={`mailto:${contactInfo.webMaster}`}>
+                {contactInfo.webMaster}
+              </a>
+            </address>
+          </Webmaster>
+        </FooterItem>
+        <FooterItem>
+          <RelatedUnits>
+            <h3>Related Units</h3>
 
-            <p id="webmaster">Webmaster: {Config.WEB_MASTER}</p>
-          </div>
-
-          <div className="cell small-12 medium-6 large-5">
-            <h2>Related Units</h2>
-
-            <ol className="lined">
+            <RelatedLinks>
               <li>
                 <a href="https://www.rutgers.edu">
                   Rutgers, The State University of New Jersey
@@ -101,50 +220,44 @@ const Footer = () => {
                   Executive Dean of Agriculture &amp; Natural Resources
                 </a>
               </li>
-            </ol>
+            </RelatedLinks>
+          </RelatedUnits>
+        </FooterItem>
+      </FooterOne>
+      <FooterTwo>
+        <FooterItem>
+          <div className="footer-container">
+            <div className="copywrite">
+              <p>
+                <a href="https://www.rutgers.edu/site-resource/copyright-information">
+                  Copyright &copy; {new Date().getFullYear()}
+                </a>
+                Rutgers, The State University of New Jersey
+              </p>
+              <p className="michelle">
+                This website was designed and developed by Michelle Stuart for
+                the Office of Research Analytics, SEBS
+              </p>
+
+              <address id="accessibility">
+                Rutgers University is an equal access/equal opportunity
+                institution. Individuals with disabilities are encouraged to
+                direct suggestions, comments, or complaints concerning any
+                accessibility issues with Rutgers web sites to:{" "}
+                <a href="mailto:accessibility@rutgers.edu">
+                  accessibility&#64;rutgers.edu
+                </a>{" "}
+                or complete the{" "}
+                <a href="https://it.rutgers.edu/it-accessibility-initiative/barrierform/">
+                  Report Accessibility Barrier or Provide Feedback Form
+                </a>
+                .
+              </address>
+            </div>
           </div>
-
-          {/* <div className="cell small-12 medium-6 large-2">
-            <a href="http://health.rutgers.edu/do-something-to-help/">
-              <img
-                className="lazyload campaign"
-                src={
-                   
-                  "/ru-sebs/images/concerned-logo-m.png"
-                }
-                alt="Click to share a concern."
-              />
-            </a>
-          </div> */}
-        </div>
-      </div>
-
-      <div id="footer2-wrapper" className="grid-container full">
-        <div id="footer2" className="grid-x grid-margin-x">
-          <p>
-            <a href="https://www.rutgers.edu/site-resource/copyright-information">
-              Copyright &copy; 2020
-            </a>{" "}
-            Rutgers, The State University of New Jersey
-          </p>
-
-          <p id="accessibility">
-            Rutgers University is an equal access/equal opportunity institution.
-            Individuals with disabilities are encouraged to direct suggestions,
-            comments, or complaints concerning any accessibility issues with
-            Rutgers web sites to:{" "}
-            <a href="mailto:accessibility@rutgers.edu">
-              accessibility&#64;rutgers.edu
-            </a>{" "}
-            or complete the{" "}
-            <a href="https://it.rutgers.edu/it-accessibility-initiative/barrierform/">
-              Report Accessibility Barrier or Provide Feedback Form
-            </a>
-            .
-          </p>
-        </div>
-      </div>
-    </footer>
+        </FooterItem>
+      </FooterTwo>
+    </FooterCntnr>
   );
 };
 

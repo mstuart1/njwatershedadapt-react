@@ -9,22 +9,29 @@ const Nav = styled.nav`
   width: 100%;
   padding: 5px 5px 0px 5px;
   background: #c03;
+
+  a:link,
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: underline;
+  }
 `;
 
 const Menu = styled.ul`
-  & > li {
+  li {
     display: inline;
     margin-right: 10px;
     font-size: 12px;
   }
-
-  & > li:last-of-type {
-    margin-right: 0;
-  }
 `;
 
 const Logo = styled.div`
-  & img {
+  img {
     width: 100px;
   }
 `;
@@ -40,25 +47,15 @@ const RutgersHeader = () => {
         </Logo>
         <Menu>
           <li>
-            <a
-              style={{ color: "white" }}
-              href="https://newbrunswick.rutgers.edu/"
-            >
+            <a href="https://newbrunswick.rutgers.edu/">
               Rutgers–New Brunswick
             </a>
           </li>
           <li>
-            <a style={{ color: "white" }} href="https://my.rutgers.edu">
-              myRutgers
-            </a>
+            <a href="https://my.rutgers.edu">myRutgers</a>
           </li>
           <li>
-            <a
-              style={{ color: "white" }}
-              href="https://search.rutgers.edu/web.html"
-            >
-              Search Rutgers
-            </a>
+            <a href="https://search.rutgers.edu/web.html">Search Rutgers</a>
           </li>
         </Menu>
       </Nav>

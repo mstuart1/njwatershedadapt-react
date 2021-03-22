@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GlobalFonts from "./fonts/fonts";
+import { contactInfo } from "./contactInfo";
 
 const HeaderContainer = styled.div`
   color: #000;
@@ -25,7 +26,9 @@ const UnitHeader = () => {
   return (
     <HeaderContainer>
       <GlobalFonts />
-      <SebsText>School of Environmental and Biological Sciences</SebsText>
+      <SebsText>
+        {contactInfo.unitName} - {contactInfo.schoolName}
+      </SebsText>
     </HeaderContainer>
   );
 };
