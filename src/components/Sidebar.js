@@ -18,12 +18,14 @@ const SidebarWrap = styled.div`
   width: 200%;
 `;
 
+// these are commented out just in case we want to show/hide sidebar
 // const MenuText = styled.text`
 //   color: #fff;
 //   font-size: large;
 // `;
 
 const Sidebar = () => {
+  // these are commented out just in case we want to show/hide sidebar
   // const [sidebar, setSidebar] = useState(false);
 
   // const showSidebar = () => {
@@ -32,11 +34,11 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* <div style={{ color: "white" }}> */}
+      {/* these are commented out just in case we want to show/hide sidebar */}
       {/* <NavCmpnt sidebar={sidebar} showSidebar={showSidebar} /> */}
-
       <SidebarNav>
         <SidebarWrap>
+          {/* these are commented out just in case we want to show/hide sidebar */}
           {/* <MenuText onClick={showSidebar}>
               {sidebar ? "Hide Menu" : "Show Menu"}
             </MenuText> */}
@@ -45,7 +47,6 @@ const Sidebar = () => {
           })}
         </SidebarWrap>
       </SidebarNav>
-      {/* </div> */}
     </>
   );
 };
