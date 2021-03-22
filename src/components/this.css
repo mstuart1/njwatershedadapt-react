@@ -12,5 +12,6 @@ flex-wrap: wrap;
 .test:hover{
     background: #632ce4;
     cursor: pointer;
+    overflow:hidden;
 
 }

@@ -1,68 +1,79 @@
 import React from "react";
-import image from "./OswegoRiver_2015.jpeg";
 import styled from "styled-components";
 
-const Background = styled.div`
-  background-image: url(${image});
-`;
+let baseFontSize = "18px";
+let bkgdColor = "#efefef";
+let lineLength = "750px";
 
-const IntroDiv = styled.div`
-  background-color: rgba(239, 239, 239, 0.75);
-  font-family: sans-serif;
-  color: #000;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.25;
-  width: auto;
-  height: 30vh;
-  flex: 2;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Overview = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2em;
-  background: #efefef;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+
+  color: black;
+  font-size: ${baseFontSize};
 `;
 
-const Container = styled.div`
-  width: 100px;
-  height: 100px;
-  border: 1px solid red;
-  margin-right: 10px;
-  float: right;
+const Title = styled.header`
+  font-size: 1.5em;
+  background-color: ${bkgdColor};
+
+  margin: 0 auto;
+  width: 100vw;
+
+  h1,
+  h2 {
+    margin: 0;
+    text-align: flex-start;
+    padding-left: 50px;
+  }
+`;
+
+const Text = styled.div`
+  font-size: 1em;
+  background-color: ${bkgdColor};
+
+  margin: 2em auto;
+  width: 100vw;
+  p {
+    padding-left: 50px;
+    max-width: ${lineLength};
+  }
 `;
 
 const Intro = () => {
   return (
-    <Container>
-      <Background>
-        <IntroDiv>
-          <h1>NJ Watershed Adapt</h1>
-        </IntroDiv>
-      </Background>
-      <Overview>
-        <br />
-        <h3>Overview</h3>
-        <br />
+    <Content>
+      <Title>
+        <h1>NJ Watershed Adapt</h1>
+      </Title>
+      <Title>
+        <h2>Overview</h2>
+      </Title>
+      <Text>
         <p>
           This portal provides scientifically verified data and management
           scenarios due to climate change in the landscapes primarily related to
-          water resources. The data and scenarios are generated based on the
-          hydrology/water quality model (i.e. physically based semi-distributed
-          model). The data and scenarios provided in this portal highlight the
-          potential impacts of climate change on hydrology and water quality in
-          the watershed as well as various adaptation strategies. This data can
-          be used by variety of target audience such as researchers,
-          policymakers, NRCS personnel, watershed associations and
-          municipalities. Understanding the potential impacts of climate change
-          will help inform policy and planning for better climate resilient
-          strategies on water resources.
+          water resources.
         </p>
-      </Overview>
-    </Container>
+        <p>
+          The data and scenarios are generated based on the hydrology/water
+          quality model (i.e. physically based semi-distributed model). The data
+          and scenarios provided in this portal highlight the potential impacts
+          of climate change on hydrology and water quality in the watershed as
+          well as various adaptation strategies. This data can be used by
+          variety of target audiences such as researchers, policymakers, NRCS
+          personnel, watershed associations and municipalities.
+        </p>
+        <p>
+          Understanding the potential impacts of climate change will help inform
+          policy and planning for better climate resilient strategies on water
+          resources.
+        </p>
+      </Text>
+    </Content>
   );
 };
 

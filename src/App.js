@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import image from "./OswegoRiver_2015.jpeg";
 // import "./App.css";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -8,7 +8,7 @@ import styled from "styled-components";
 import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
 import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
-// import Intro from "./components/Intro";
+import Intro from "./components/Intro";
 // import styled from "styled-components";
 
 // const SidebarCntnr = styled.div`
@@ -30,13 +30,9 @@ import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 const Page = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-const ContentTest = styled.div`
-  border: 1px solid black;
-  background-color: blue;
-  height: 200px;
-  flex: 1;
+  padding-top: 1px;
+  background-image: url(${image});
+  background-size: cover;
 `;
 
 const App = () => {
@@ -46,9 +42,9 @@ const App = () => {
       <UnitHeader />
       <Page>
         <Sidebar />
-        <ContentTest></ContentTest>
+        <Intro />
       </Page>
-      {/* // <SidebarCntnr> */}
+
       {/* //   <Switch> */}
       {/* //     <Route path="/overview" exact component={Overview} /> */}
       {/* //     <Route path="/reports" exact component={Reports} /> */}
@@ -58,7 +54,7 @@ const App = () => {
       {/* // </SidebarCntnr> */}
       {/* // <Content> */}
       {/* // <Image></Image> */}
-      {/* // <Intro /> */}
+
       {/* // </Content> */}
       <RutgersFooter />
     </Router>
