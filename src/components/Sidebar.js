@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-// import * as FaIcons from "react-icons/fa";
-import { sidebarData } from "./sidebarData";
 import Submenu from "./Submenu";
-// import NavCmpnt from "./NavCmpnt";
 
 const SidebarNav = styled.nav`
   border: 1px solid black;
@@ -24,7 +21,7 @@ const SidebarWrap = styled.div`
 //   font-size: large;
 // `;
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarData }) => {
   // these are commented out just in case we want to show/hide sidebar
   // const [sidebar, setSidebar] = useState(false);
 

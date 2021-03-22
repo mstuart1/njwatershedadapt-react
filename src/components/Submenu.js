@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // the &:hover allows you to do the active etc with styled components
-const SidebarLink = styled(Link)`
+const SidebarLink = styled.a`
   display: flex;
   color: #white !important;
   justify-content: space-between;
@@ -32,7 +32,7 @@ const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
 
   return (
     <>
-      <SidebarLink to={item.path} onClick={item.subNav && showSubNav}>
+      <SidebarLink href={item.path} onClick={item.subNav && showSubNav}>
         <div style={{ paddingLeft: depth * depthStep }}>
           {item.icon}
           <SidebarLabel style={{ color: "white !important" }}>

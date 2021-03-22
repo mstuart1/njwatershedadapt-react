@@ -3,29 +3,12 @@ import image from "./OswegoRiver_2015.jpeg";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
-// import Overview from "./pages/Overview";
-// import { Reports, ReportsOne, ReportsTwo } from "./pages/Reports";
+import { sidebarData } from "./components/sidebarData";
+import Streamflow from "./pages/upper_salem_river/model_performance/streamflow";
 import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
 import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 import Intro from "./components/Intro";
-// import styled from "styled-components";
-
-// const SidebarCntnr = styled.div`
-//   z-index: 10;
-// `;
-
-// const Content = styled.div`
-//   padding: 20px;
-// `;
-
-// const Image = styled.img`
-//   float: left;
-//   width: 300px;
-//   height: 200px;
-//   margin-right: 20px;
-//   margin-bottom: 20px;
-// `;
 
 const Page = styled.div`
   display: flex;
@@ -41,25 +24,22 @@ const App = () => {
       <RutgersHeader />
       <UnitHeader />
       <Page>
-        <Sidebar />
-        <Intro />
+        <Sidebar sidebarData={sidebarData} />
+        <Switch>
+          {/* {sidebarData.map((route, index) => (
+            <Route key={index} path={route.path} component={route.component} />
+          ))} */}
+          <Route exact path="/" component={Intro} />
+          <Route
+            exact
+            path="/upper_salem_river/model_performance/streamflow"
+            component={Streamflow}
+          />
+        </Switch>
       </Page>
 
-      {/* //   <Switch> */}
-      {/* //     <Route path="/overview" exact component={Overview} /> */}
-      {/* //     <Route path="/reports" exact component={Reports} /> */}
-      {/* //     <Route path="/reports/reports1" exact component={ReportsOne} /> */}
-      {/* //     <Route path="/reports/reports2" exact component={ReportsTwo} /> */}
-      {/* //   </Switch> */}
-      {/* // </SidebarCntnr> */}
-      {/* // <Content> */}
-      {/* // <Image></Image> */}
-
-      {/* // </Content> */}
       <RutgersFooter />
     </Router>
-    // </Page>
-    // </Container>
   );
 };
 

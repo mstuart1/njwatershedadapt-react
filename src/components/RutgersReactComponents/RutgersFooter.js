@@ -1,6 +1,6 @@
 import React from "react";
 import { contactInfo } from "./contactInfo";
-import * as FaIcons from "react-icons/fa";
+// import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as MdIcons from "react-icons/md";
 import styled from "styled-components";
@@ -89,19 +89,19 @@ const AddressCntnr = styled.div`
   align-items: flex-start;
 `;
 
-const Social = styled.div`
-  padding-top: 0;
-  padding-left: 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+// const Social = styled.div`
+//   padding-top: 0;
+//   padding-left: 20px;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: flex-start;
 
-  li {
-    display: inline;
-    margin-right: 10px;
-    font-size: 20px;
-  }
-`;
+//   li {
+//     display: inline;
+//     margin-right: 10px;
+//     font-size: 20px;
+//   }
+// `;
 
 const RelatedUnits = styled.div`
   h3 {
