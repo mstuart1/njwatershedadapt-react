@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 let baseFontSize = "18px";
+let bkgdColorTrans = "#efefef9C";
 let bkgdColor = "#efefef";
 let lineLength = "750px";
 
@@ -18,8 +19,7 @@ const Content = styled.div`
 
 const Title = styled.header`
   font-size: 1.5em;
-  background-color: ${bkgdColor};
-  opacity: 0.65;
+  background-color: ${bkgdColorTrans};
 
   margin: 0 auto;
   width: 100vw;

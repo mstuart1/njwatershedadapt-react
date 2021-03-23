@@ -5,7 +5,7 @@ import styled from "styled-components";
 // the &:hover allows you to do the active etc with styled components
 const SidebarLink = styled.a`
   display: flex;
-  color: #white !important;
+  color: #white;
   justify-content: space-between;
   align-items: center;
   // padding: 20px;
@@ -16,7 +16,7 @@ const SidebarLink = styled.a`
 
   &:hover {
     background: #252831;
-    border-left: 4px solid #632ce4;
+    border-left: 4px solid #c03;
     cursor: pointer;
   }
 `;

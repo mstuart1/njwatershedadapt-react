@@ -3,18 +3,14 @@ import styled from "styled-components";
 import Submenu from "./Submenu";
 
 const SidebarNav = styled.nav`
-  // border: 1px solid black;
-  background-color: black;
-  opacity: 0.7;
-  height: 430px;
+  background-color: #00000092;
+
   flex: initial;
   width: 300px;
   flex-wrap: wrap;
 `;
 
-const SidebarWrap = styled.div`
-  width: 200%;
-`;
+const SidebarWrap = styled.div``;
 
 // these are commented out just in case we want to show/hide sidebar
 // const MenuText = styled.text`
@@ -35,7 +31,7 @@ const Sidebar = ({ sidebarData }) => {
       {/* these are commented out just in case we want to show/hide sidebar */}
       {/* <NavCmpnt sidebar={sidebar} showSidebar={showSidebar} /> */}
       <SidebarNav>
-        <SidebarWrap>
+        <div className="sidebar-wrap">
           {/* these are commented out just in case we want to show/hide sidebar */}
           {/* <MenuText onClick={showSidebar}>
               {sidebar ? "Hide Menu" : "Show Menu"}
@@ -43,7 +39,7 @@ const Sidebar = ({ sidebarData }) => {
           {sidebarData.map((item, index) => {
             return <Submenu item={item} key={index} />;
           })}
-        </SidebarWrap>
+        </div>
       </SidebarNav>
     </>
   );
