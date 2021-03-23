@@ -3,8 +3,9 @@ import styled from "styled-components";
 import Submenu from "./Submenu";
 
 const SidebarNav = styled.nav`
-  border: 1px solid black;
-  background-color: #000000d5;
+  // border: 1px solid black;
+  background-color: black;
+  opacity: 0.7;
   height: 430px;
   flex: initial;
   width: 300px;

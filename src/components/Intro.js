@@ -19,6 +19,7 @@ const Content = styled.div`
 const Title = styled.header`
   font-size: 1.5em;
   background-color: ${bkgdColor};
+  opacity: 0.65;
 
   margin: 0 auto;
   width: 100vw;

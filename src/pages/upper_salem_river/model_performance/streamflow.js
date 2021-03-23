@@ -76,16 +76,19 @@ const Streamflow = () => {
     <Content>
       <Text>
         <h1>Streamflow</h1>
-        <div>
-          <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-          {/* <LineChart /> */}
-        </div>
         <p>
           A hydrology/water quality model known as SWAT (Soil and Water
           Assessment Tool) is used to understand the potential impacts of
           climate change on streamflow. The SWAT model is calibrated and
           validated using a model evaluation parameter called NSE (Nash-Sutcliff
           efficiency) before using it for different climate change scenarios.
+        </p>
+        <div>
+          <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+          {/* <LineChart /> */}
+        </div>
+
+        <p>
           The blue color solid line is the observed monthly average streamflow
           from the Upper Salem River Watershed whilst the dotted red line is the
           model predicted streamflow. From the figure it is clear that both
