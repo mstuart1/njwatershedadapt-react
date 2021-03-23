@@ -4,6 +4,7 @@
     align-items: center;
     flex-direction:row;
     z-index: auto;
+    font-weight: bold;
 flex-wrap: wrap;
     border: 2px solid white;
     background-color: #efefef9c;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // the &:hover allows you to do the active etc with styled components
-const SidebarLink = styled.a`
+const SidebarLink = styled(Link)`
   display: flex;
   color: #white;
   justify-content: space-between;
@@ -13,11 +13,16 @@ const SidebarLink = styled.a`
   height: 50px;
   text-decoration: none;
   font-size: 18px;
+  font-weight: bold;
 
   &:hover {
     background: #252831;
     border-left: 4px solid #c03;
     cursor: pointer;
+
+    &:active {
+      background-color: #c03;
+    }
   }
 `;
 
@@ -28,11 +33,18 @@ const SidebarLabel = styled.span`
 
 const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
   const [subnav, setSubnav] = useState(false);
-  const showSubNav = () => setSubnav(!subnav);
+  const [activeState, setActiveState] = useState(null);
+
+  const handleClick = (index) => {
+    setSubnav(!subnav);
+    if (index) {
+      setActiveState(index);
+    }
+  };
 
   return (
     <>
-      <SidebarLink href={item.path} onClick={item.subNav && showSubNav}>
+      <SidebarLink to={item.path} onClick={item.subNav && handleClick}>
         <div style={{ paddingLeft: depth * depthStep }}>
           {item.icon}
           <SidebarLabel style={{ color: "white !important" }}>
@@ -52,6 +64,7 @@ const Submenu = ({ item, depthStep = 10, depth = 0 }) => {
         item.subNav.map((item, index) => {
           return (
             <Submenu
+              active={activeState === index}
               item={item}
               depthStep={depthStep}
               depth={depth + 2}

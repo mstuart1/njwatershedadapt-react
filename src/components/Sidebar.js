@@ -6,11 +6,11 @@ const SidebarNav = styled.nav`
   background-color: #00000092;
 
   flex: initial;
-  width: 300px;
+  width: 400px;
   flex-wrap: wrap;
 `;
 
-const SidebarWrap = styled.div``;
+// const SidebarWrap = styled.div`width:200%;`;
 
 // these are commented out just in case we want to show/hide sidebar
 // const MenuText = styled.text`
