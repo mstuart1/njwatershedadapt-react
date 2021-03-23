@@ -10,6 +10,7 @@ const FooterCntnr = styled.footer`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
   font-size: 14px;
   line-height: 1.2em;
 
@@ -23,17 +24,18 @@ const FooterCntnr = styled.footer`
     color: white;
     text-decoration: underline;
   }
-
-  h3 {
-    padding: 0 10px;
-    color: #fecd31;
-  }
 `;
 
 const FooterOne = styled.div`
   display: flex;
-  justify-content: space-between;
+
   background-color: #666666;
+
+  // .footer-1-container {
+  //   max-width: 750px;
+  //   display: flex;
+  //   justify-contents: space-between;
+  // }
 `;
 
 const FooterTwo = styled.div`
@@ -58,16 +60,23 @@ const FooterTwo = styled.div`
 
 const FooterItem = styled.div`
   flex: 1;
+  margin-bottom: 0;
+
+  h3 {
+    color: #fecd31;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+  }
 `;
 
 const Contact = styled.div`
-  padding: 0 10px;
   color: white;
 `;
 
 const Webmaster = styled.div`
-  padding-left: 55px;
-  padding-bottom: 10px;
+  margin: 1em 2.5em;
+
   color: white;
 
   address {
@@ -80,13 +89,18 @@ const Webmaster = styled.div`
 const AddressIcon = styled.div`
   color: #fecd31;
   display: inline;
-  padding: 15px;
+  margin: 0.5em 0.5em 0 1em;
 `;
 
 const AddressCntnr = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+
+  p {
+    padding-top: 0.5em;
+    margin: 0;
+  }
 `;
 
 // const Social = styled.div`
@@ -103,14 +117,11 @@ const AddressCntnr = styled.div`
 //   }
 // `;
 
-const RelatedUnits = styled.div`
-  h3 {
-    padding-left: 40px;
-  }
-`;
 const RelatedLinks = styled.ul`
   display: flex;
   flex-direction: column;
+
+  padding-left: 1em;
 
   li {
     list-style: none;
@@ -123,6 +134,7 @@ const Footer = () => {
     <FooterCntnr>
       {/* <div className="footer-container"></div> */}
       <FooterOne>
+        {/* <div className="footer-1-contianer"> */}
         <FooterItem>
           <Contact>
             <h3>Contact</h3>
@@ -147,7 +159,6 @@ const Footer = () => {
                   {contactInfo.buildingName}
                 </a>
                 , {contactInfo.campus}
-                <br />
               </p>
             </AddressCntnr>
             <AddressCntnr>
@@ -191,9 +202,8 @@ const Footer = () => {
           </Webmaster>
         </FooterItem>
         <FooterItem>
-          <RelatedUnits>
+          <div className="related-units">
             <h3>Related Units</h3>
-
             <RelatedLinks>
               <li>
                 <a href="https://www.rutgers.edu">
@@ -221,8 +231,9 @@ const Footer = () => {
                 </a>
               </li>
             </RelatedLinks>
-          </RelatedUnits>
+          </div>
         </FooterItem>
+        {/* </div> */}
       </FooterOne>
       <FooterTwo>
         <FooterItem>
@@ -231,12 +242,8 @@ const Footer = () => {
               <p>
                 <a href="https://www.rutgers.edu/site-resource/copyright-information">
                   Copyright &copy; {new Date().getFullYear()}
-                </a>
+                </a>{" "}
                 Rutgers, The State University of New Jersey
-              </p>
-              <p className="michelle">
-                This website was designed and developed by Michelle Stuart for
-                the Office of Research Analytics, SEBS
               </p>
 
               <address id="accessibility">
@@ -253,6 +260,11 @@ const Footer = () => {
                 </a>
                 .
               </address>
+
+              <p className="michelle">
+                This website was designed and developed by Michelle Stuart for
+                the Office of Research Analytics, SEBS
+              </p>
             </div>
           </div>
         </FooterItem>

@@ -5,19 +5,21 @@ import logo from "./RUTGERS_REVWHITE.png";
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   width: 100%;
-  padding: 5px 5px 0px 5px;
+  padding: 5px 10px 0 10px;
   background: #c03;
 
   a:link,
-  a:visited {
+  a:visited,
+  a:hover {
     color: white;
     text-decoration: none;
+    font-size: 1.3em;
   }
 
   a:hover {
-    color: white;
     text-decoration: underline;
   }
 `;

@@ -11,15 +11,18 @@ const HeaderContainer = styled.div`
   justify-content: flext start;
 `;
 
-// links to import fonts
-//   <link rel="preconnect" href="https://fonts.gstatic.com">
-// <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 const SebsText = styled.h1`
   font-family: "Libre Baskerville", serif;
   color: #000;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.25em;
+  margin: 0;
+
+  h1,
+  h2 {
+    margin: 0;
+  }
 `;
 
 const UnitHeader = () => {
@@ -27,7 +30,8 @@ const UnitHeader = () => {
     <HeaderContainer>
       <GlobalFonts />
       <SebsText>
-        {contactInfo.unitName} - {contactInfo.schoolName}
+        <h1>{contactInfo.schoolName}</h1> <br />
+        <h2>{contactInfo.unitName}</h2>
       </SebsText>
     </HeaderContainer>
   );
