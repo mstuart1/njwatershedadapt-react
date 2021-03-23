@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-// import LineChart from "./LineChart";
-import Highcharts from "highcharts";
-import HighchartsReact from "highcharts-react-official";
-import addDataModule from "highcharts/modules/data";
-import streamflowDat from "./model_perf-streamflow.csv";
+import { LineChartPlotter } from "../../../components/LineChartPlotter";
 
 let baseFontSize = "18px";
 let bkgdColor = "#efefef";
@@ -21,21 +17,6 @@ const Content = styled.div`
   font-size: ${baseFontSize};
 `;
 
-// const Title = styled.header`
-//   font-size: 1.5em;
-//   background-color: ${bkgdColor};
-
-//   margin: 0 auto;
-//   width: 100vw;
-
-//   h1,
-//   h2 {
-//     margin: 0;
-//     text-align: flex-start;
-//     padding-left: 50px;
-//   }
-// `;
-
 const Text = styled.div`
   font-size: 1em;
   background-color: ${bkgdColor};
@@ -47,31 +28,7 @@ const Text = styled.div`
   max-width: ${lineLength};
 `;
 
-if (typeof Highcharts === "object") {
-  // addExportingModule(Highcharts);
-  addDataModule(Highcharts);
-}
-
-const csvData = streamflowDat;
-
 const Streamflow = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    Highcharts.data({
-      csvData,
-      complete: (parsed) => setData(parsed),
-    });
-  }, []);
-
-  const chartOptions = {
-    chart: { type: "spline" },
-    title: { text: "" },
-    data: { data },
-    series: [{ color: "#007FAC" }, { color: "#ebb600", dashStyle: "dash" }],
-    yAxis: { title: { text: "Streamflow (cubic feet/sec)" } },
-  };
-
   return (
     <Content>
       <Text>
@@ -84,8 +41,7 @@ const Streamflow = () => {
           efficiency) before using it for different climate change scenarios.
         </p>
         <div>
-          <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-          {/* <LineChart /> */}
+          <LineChartPlotter />
         </div>
 
         <p>

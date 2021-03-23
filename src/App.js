@@ -9,7 +9,7 @@ import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
 import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 import Intro from "./components/Intro";
-import { Test } from "./components/test";
+// import { Test } from "./components/test";
 
 const Page = styled.div`
   display: flex;
