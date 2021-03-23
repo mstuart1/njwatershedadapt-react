@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LineChartPlotter } from "../../../components/LineChartPlotter";
+import { LineChartPlotter } from "./LineChartPlotter";
 
 let baseFontSize = "18px";
 let bkgdColor = "#efefef";
@@ -19,6 +19,7 @@ const Content = styled.div`
 
 const Text = styled.div`
   font-size: 1em;
+  color: #444;
   background-color: ${bkgdColor};
 
   margin: 0 auto;
@@ -56,20 +57,6 @@ const Streamflow = () => {
           measurement error with precipitation and streamflow in the field
           combined with inability of the model to capture the sudden increase
           and decrease of streamflow during storm event.
-        </p>
-
-        <p>
-          The blue color solid line is the observed monthly average streamflow
-          from the Upper Salem River Watershed whilst the red dotted line is the
-          model predicted streamflow. From the figure it is clear that both
-          lines are matching quite well. Additionally, the model evaluation
-          parameter (i.e. NSE) is 0.76 which is higher than 0.5 (recommended).
-          This suggests that the hydrologic model is very good for predicting
-          streamflow in this watershed. However, few peaks of streamflow are not
-          matched well by model which may be due to measurement error with
-          precipitation and streamflow in the field combined with inability of
-          the model to capture the sudden increase and decrease of streamflow
-          during storm event.
         </p>
       </Text>
     </Content>

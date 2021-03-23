@@ -13,7 +13,7 @@ export const sidebarData = [
       {
         title: "Streamflow",
         component: "Streamflow",
-        path: "/upper_salem_river/model_performance/streamflow",
+        path: "/upper_salem_river/model_performance/streamflow/streamflow",
       },
       {
         title: "Sediment",

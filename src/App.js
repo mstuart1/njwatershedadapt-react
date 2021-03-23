@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import { sidebarData } from "./components/sidebarData";
-import Streamflow from "./pages/upper_salem_river/model_performance/streamflow";
+import Streamflow from "./pages/upper_salem_river/model_performance/streamflow/streamflow";
 import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
 import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
@@ -41,7 +41,7 @@ const App = () => {
           <Route exact path="/" component={Intro} />
           <Route
             exact
-            path="/upper_salem_river/model_performance/streamflow"
+            path="/upper_salem_river/model_performance/streamflow/streamflow"
             component={Streamflow}
           />
           {/* {sidebarData.map((route, index) => (
