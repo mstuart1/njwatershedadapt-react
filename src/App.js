@@ -21,27 +21,27 @@ const Page = styled.div`
 
 const App = () => {
   return (
-    // <Router>
-    // <RutgersHeader />
-    // <UnitHeader />
-    <Test />
-    // <Page>
-    // <Sidebar sidebarData={sidebarData} />
-    // <Switch>
-    // <Route exact path="/" component={Intro} />
-    // <Route
-    // exact
-    // path="/upper_salem_river/model_performance/streamflow"
-    // component={Streamflow}
-    // />
-    // {/* {sidebarData.map((route, index) => (
-    // <Route key={index} path={route.path} />
-    // ))} */}
-    // </Switch>
-    // </Page>
+    <Router>
+      <RutgersHeader />
+      <UnitHeader />
+      {/* <Test /> */}
+      <Page>
+        <Sidebar sidebarData={sidebarData} />
+        <Switch>
+          <Route exact path="/" component={Intro} />
+          <Route
+            exact
+            path="/upper_salem_river/model_performance/streamflow"
+            component={Streamflow}
+          />
+          {/* {sidebarData.map((route, index) => (
+    <Route key={index} path={route.path} />
+    ))} */}
+        </Switch>
+      </Page>
 
-    // <RutgersFooter />
-    // </Router>
+      <RutgersFooter />
+    </Router>
   );
 };
 
