@@ -9,6 +9,7 @@ import RutgersHeader from "./components/RutgersReactComponents/RutgersHeader";
 import UnitHeader from "./components/RutgersReactComponents/UnitHeader";
 import RutgersFooter from "./components/RutgersReactComponents/RutgersFooter";
 import Intro from "./components/Intro";
+import { Test } from "./components/test";
 
 const Page = styled.div`
   display: flex;
@@ -20,26 +21,27 @@ const Page = styled.div`
 
 const App = () => {
   return (
-    <Router>
-      <RutgersHeader />
-      <UnitHeader />
-      <Page>
-        <Sidebar sidebarData={sidebarData} />
-        <Switch>
-          {/* {sidebarData.map((route, index) => (
-            <Route key={index} path={route.path} component={route.component} />
-          ))} */}
-          <Route exact path="/" component={Intro} />
-          <Route
-            exact
-            path="/upper_salem_river/model_performance/streamflow"
-            component={Streamflow}
-          />
-        </Switch>
-      </Page>
+    // <Router>
+    // <RutgersHeader />
+    // <UnitHeader />
+    <Test />
+    // <Page>
+    // <Sidebar sidebarData={sidebarData} />
+    // <Switch>
+    // <Route exact path="/" component={Intro} />
+    // <Route
+    // exact
+    // path="/upper_salem_river/model_performance/streamflow"
+    // component={Streamflow}
+    // />
+    // {/* {sidebarData.map((route, index) => (
+    // <Route key={index} path={route.path} />
+    // ))} */}
+    // </Switch>
+    // </Page>
 
-      <RutgersFooter />
-    </Router>
+    // <RutgersFooter />
+    // </Router>
   );
 };
 
